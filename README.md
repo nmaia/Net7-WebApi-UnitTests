@@ -38,8 +38,8 @@ I have other cool projects in my GitHub profile, by the way:
 This API will receive requests from the `APIs Proxy project` just to apply the Polly policies.
 
 1. Change the connection string:
-- Use a valid one
-- Set the `Initial Catalog` as `HotelDB`
+- Use a valid one (based on your environment);
+- Set the `Initial Catalog` as `HotelDB`.
 
 ![image](https://user-images.githubusercontent.com/92884809/223755001-be37983e-3974-4ed1-9ad6-c0f2bbeaa758.png)
 
