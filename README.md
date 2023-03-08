@@ -16,14 +16,14 @@ So, just to give you an overview about the project stack/structure. These are th
 
 Soome cool stuff I'd like to have more time to improve or add here:
 
-- Add [Fluent Validation](https://docs.fluentvalidation.net/en/latest/)
-- Add [AutoMapper](https://automapper.org/)
-- Add [Docker](https://www.docker.com/) (Docker file, Docker compose, Images, etc)
-- Add [RabbitMQ](https://www.rabbitmq.com/)
-- Add [Serilog](https://serilog.net/)
-- Add [DotNet Stryker](https://stryker-mutator.io/docs/stryker-net/introduction/) (Mutation Tests)
+- Add [Fluent Validation](https://docs.fluentvalidation.net/en/latest/): To improve code readbility;
+- Add [AutoMapper](https://automapper.org/): To improve code readability and data transfer between objects;
+- Add [Docker](https://www.docker.com/) (Docker file, Docker compose, Images, etc): To containerize the applications;
+- Add [RabbitMQ](https://www.rabbitmq.com/): To handle booking requests;
+- Add [Serilog](https://serilog.net/): To improve the logging stuff;
+- Add [DotNet Stryker](https://stryker-mutator.io/docs/stryker-net/introduction/) (Mutation Tests): To improve unit tests reliability;
 - Adds code refactoring to the `API Proxy` project to handle `Hotels API` response in a better way.
-- Create workspaces via Postman to test the APIs.
+- Create workspaces via Postman to test the APIs. So it would be easier to share the API documentation and requests with other devs or so.
 
 Actually, I have other cool projects in my GitHub profile:
 - e.g. [AspNetCore2.2-WebAPI-RabbitMQ-MongoDB-Docker](https://github.com/nmaia/AspNetCore2.2-WebAPI-RabbitMQ-MongoDB-Docker)
