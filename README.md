@@ -25,6 +25,7 @@ Some cool stuff I'd like to have more time to improve or add to the project:
 - Adds code refactoring to the `API Proxy` project to handle `Hotels API` response in a better way;
 - Adds code refactoring to improve the API results in terms of returning friendly messages based on business rules;
 - Adds some more useful endpoints to the `Hotel.API` project (e.g. Customer Bookings, etc);
+- Improve the Polly policies;
 - Create workspaces via Postman to test the APIs. So it would be easier to share the API documentation and requests with other devs or so.
 
 I have other cool projects in my GitHub profile, by the way:
