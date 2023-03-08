@@ -27,7 +27,7 @@ Some cool stuff I'd like to have more time to improve or add to the project:
 - Adds some more useful endpoints to the `Hotel.API` project (e.g. Customer Bookings, etc);
 - Create workspaces via Postman to test the APIs. So it would be easier to share the API documentation and requests with other devs or so.
 
-Actually, I have other cool projects in my GitHub profile:
+I have other cool projects in my GitHub profile, by the way:
 - e.g. [AspNetCore2.2-WebAPI-RabbitMQ-MongoDB-Docker](https://github.com/nmaia/AspNetCore2.2-WebAPI-RabbitMQ-MongoDB-Docker)
 
 ## Steps to setup/run this project locally:
