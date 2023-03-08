@@ -70,46 +70,46 @@ namespace Hotel.Infra.Repository.Migrations
                     b.HasData(
                         new
                         {
-                            BookingID = new Guid("5609965f-1836-4bcb-a578-72eaf39ce08c"),
-                            CheckinDate = new DateTime(2023, 3, 8, 8, 8, 29, 577, DateTimeKind.Local).AddTicks(5058),
-                            CheckoutDate = new DateTime(2023, 3, 9, 8, 8, 29, 577, DateTimeKind.Local).AddTicks(5064),
-                            CreatedDate = new DateTime(2023, 3, 7, 8, 8, 29, 577, DateTimeKind.Local).AddTicks(5065),
-                            CustomerID = new Guid("bab9f53b-1162-48e3-8ca5-3665cdf7ed13"),
+                            BookingID = new Guid("e5152512-aacc-4f9e-9f6c-b93a943549ea"),
+                            CheckinDate = new DateTime(2023, 3, 9, 12, 11, 4, 923, DateTimeKind.Local).AddTicks(1675),
+                            CheckoutDate = new DateTime(2023, 3, 10, 12, 11, 4, 923, DateTimeKind.Local).AddTicks(1684),
+                            CreatedDate = new DateTime(2023, 3, 8, 12, 11, 4, 923, DateTimeKind.Local).AddTicks(1685),
+                            CustomerID = new Guid("94063471-607a-4143-9148-1c526c35f4cc"),
                             LastUpdate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            RoomID = new Guid("9dce4c50-bd22-466b-a027-113b78fc2efc"),
+                            RoomID = new Guid("31342b41-1dee-491a-8dd6-6c03af271b9b"),
                             TotalCost = 100m
                         },
                         new
                         {
-                            BookingID = new Guid("81447f3f-e4a9-48eb-90e5-fc7fc31ee9a6"),
-                            CheckinDate = new DateTime(2023, 3, 8, 8, 8, 29, 577, DateTimeKind.Local).AddTicks(5071),
-                            CheckoutDate = new DateTime(2023, 3, 9, 8, 8, 29, 577, DateTimeKind.Local).AddTicks(5071),
-                            CreatedDate = new DateTime(2023, 3, 7, 8, 8, 29, 577, DateTimeKind.Local).AddTicks(5072),
-                            CustomerID = new Guid("da31a0a5-c5aa-46a7-a057-92ed407a91ca"),
+                            BookingID = new Guid("b44e8583-3f36-41fc-9533-131f02632c9f"),
+                            CheckinDate = new DateTime(2023, 3, 9, 12, 11, 4, 923, DateTimeKind.Local).AddTicks(1701),
+                            CheckoutDate = new DateTime(2023, 3, 10, 12, 11, 4, 923, DateTimeKind.Local).AddTicks(1702),
+                            CreatedDate = new DateTime(2023, 3, 8, 12, 11, 4, 923, DateTimeKind.Local).AddTicks(1703),
+                            CustomerID = new Guid("b835f178-9fef-417a-a396-be36ccd6af9c"),
                             LastUpdate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            RoomID = new Guid("a384278b-e072-42cd-9ef9-0dc6195f3d85"),
+                            RoomID = new Guid("c6643f13-4937-4014-9730-5e444efac094"),
                             TotalCost = 100m
                         },
                         new
                         {
-                            BookingID = new Guid("34957021-afa0-4d54-9839-5421cd0090a9"),
-                            CheckinDate = new DateTime(2023, 3, 8, 8, 8, 29, 577, DateTimeKind.Local).AddTicks(5077),
-                            CheckoutDate = new DateTime(2023, 3, 9, 8, 8, 29, 577, DateTimeKind.Local).AddTicks(5078),
-                            CreatedDate = new DateTime(2023, 3, 7, 8, 8, 29, 577, DateTimeKind.Local).AddTicks(5078),
-                            CustomerID = new Guid("920ca78e-42de-4486-b168-e853a2c2f4f6"),
+                            BookingID = new Guid("c88e50f5-98b7-47e7-8902-622062a3f3e8"),
+                            CheckinDate = new DateTime(2023, 3, 9, 12, 11, 4, 923, DateTimeKind.Local).AddTicks(1709),
+                            CheckoutDate = new DateTime(2023, 3, 10, 12, 11, 4, 923, DateTimeKind.Local).AddTicks(1710),
+                            CreatedDate = new DateTime(2023, 3, 8, 12, 11, 4, 923, DateTimeKind.Local).AddTicks(1711),
+                            CustomerID = new Guid("0121e7c3-281d-4550-a5d3-52810055a759"),
                             LastUpdate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            RoomID = new Guid("0f66e4ab-6e5d-4596-910d-ae5a1d3ffb44"),
+                            RoomID = new Guid("b6172848-ad8f-4a60-8fbd-4b69a7226732"),
                             TotalCost = 100m
                         },
                         new
                         {
-                            BookingID = new Guid("911c220d-59c8-4fba-bb7d-50ed1ba184a9"),
-                            CheckinDate = new DateTime(2023, 3, 8, 8, 8, 29, 577, DateTimeKind.Local).AddTicks(5080),
-                            CheckoutDate = new DateTime(2023, 3, 9, 8, 8, 29, 577, DateTimeKind.Local).AddTicks(5081),
-                            CreatedDate = new DateTime(2023, 3, 7, 8, 8, 29, 577, DateTimeKind.Local).AddTicks(5081),
-                            CustomerID = new Guid("898a0311-5b33-438f-a8e2-1060fa4f3922"),
+                            BookingID = new Guid("ffdbac65-422c-4543-ad30-68720e5a16ee"),
+                            CheckinDate = new DateTime(2023, 3, 9, 12, 11, 4, 923, DateTimeKind.Local).AddTicks(1715),
+                            CheckoutDate = new DateTime(2023, 3, 10, 12, 11, 4, 923, DateTimeKind.Local).AddTicks(1715),
+                            CreatedDate = new DateTime(2023, 3, 8, 12, 11, 4, 923, DateTimeKind.Local).AddTicks(1716),
+                            CustomerID = new Guid("44f8215f-df3f-48f3-b53d-5dc88eb33622"),
                             LastUpdate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            RoomID = new Guid("a53634f9-9fa1-4589-b6c5-dd5231554137"),
+                            RoomID = new Guid("d5c82e94-c3af-4780-8d73-8b05ee00a683"),
                             TotalCost = 100m
                         });
                 });
@@ -154,9 +154,9 @@ namespace Hotel.Infra.Repository.Migrations
                     b.HasData(
                         new
                         {
-                            CustomerID = new Guid("bab9f53b-1162-48e3-8ca5-3665cdf7ed13"),
+                            CustomerID = new Guid("94063471-607a-4143-9148-1c526c35f4cc"),
                             BirthDate = new DateTime(1967, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTime(2023, 3, 7, 8, 8, 29, 577, DateTimeKind.Local).AddTicks(5016),
+                            CreatedDate = new DateTime(2023, 3, 8, 12, 11, 4, 923, DateTimeKind.Local).AddTicks(1588),
                             Email = "zakk@mail.com",
                             LastUpdate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Zakk Wylde",
@@ -164,9 +164,9 @@ namespace Hotel.Infra.Repository.Migrations
                         },
                         new
                         {
-                            CustomerID = new Guid("da31a0a5-c5aa-46a7-a057-92ed407a91ca"),
+                            CustomerID = new Guid("b835f178-9fef-417a-a396-be36ccd6af9c"),
                             BirthDate = new DateTime(1948, 12, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTime(2023, 3, 7, 8, 8, 29, 577, DateTimeKind.Local).AddTicks(5024),
+                            CreatedDate = new DateTime(2023, 3, 8, 12, 11, 4, 923, DateTimeKind.Local).AddTicks(1604),
                             Email = "ozzy@mail.com",
                             LastUpdate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Ozzy Osbourne",
@@ -174,9 +174,9 @@ namespace Hotel.Infra.Repository.Migrations
                         },
                         new
                         {
-                            CustomerID = new Guid("920ca78e-42de-4486-b168-e853a2c2f4f6"),
+                            CustomerID = new Guid("0121e7c3-281d-4550-a5d3-52810055a759"),
                             BirthDate = new DateTime(1971, 2, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTime(2023, 3, 7, 8, 8, 29, 577, DateTimeKind.Local).AddTicks(5028),
+                            CreatedDate = new DateTime(2023, 3, 8, 12, 11, 4, 923, DateTimeKind.Local).AddTicks(1613),
                             Email = "randy@mail.com",
                             LastUpdate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Randy Blythe",
@@ -184,9 +184,9 @@ namespace Hotel.Infra.Repository.Migrations
                         },
                         new
                         {
-                            CustomerID = new Guid("898a0311-5b33-438f-a8e2-1060fa4f3922"),
+                            CustomerID = new Guid("44f8215f-df3f-48f3-b53d-5dc88eb33622"),
                             BirthDate = new DateTime(1942, 7, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTime(2023, 3, 7, 8, 8, 29, 577, DateTimeKind.Local).AddTicks(5033),
+                            CreatedDate = new DateTime(2023, 3, 8, 12, 11, 4, 923, DateTimeKind.Local).AddTicks(1623),
                             Email = "dio@mail.com",
                             LastUpdate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Ronnie James Dio",
@@ -194,9 +194,9 @@ namespace Hotel.Infra.Repository.Migrations
                         },
                         new
                         {
-                            CustomerID = new Guid("82420972-db0f-4d3a-9ff2-b63654b8df82"),
+                            CustomerID = new Guid("ddeffc9e-7cea-4d9d-823b-e2bbbfa6dc97"),
                             BirthDate = new DateTime(1963, 8, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTime(2023, 3, 7, 8, 8, 29, 577, DateTimeKind.Local).AddTicks(5037),
+                            CreatedDate = new DateTime(2023, 3, 8, 12, 11, 4, 923, DateTimeKind.Local).AddTicks(1633),
                             Email = "james@mail.com",
                             LastUpdate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "James Hetfield",
@@ -229,8 +229,8 @@ namespace Hotel.Infra.Repository.Migrations
                     b.HasData(
                         new
                         {
-                            HotelID = new Guid("42a5e8f5-5745-4231-8cd3-47a0e4c0f098"),
-                            CreatedDate = new DateTime(2023, 3, 7, 8, 8, 29, 577, DateTimeKind.Local).AddTicks(4689),
+                            HotelID = new Guid("60581ea7-a79e-4df4-abcb-a956f3316639"),
+                            CreatedDate = new DateTime(2023, 3, 8, 12, 11, 4, 923, DateTimeKind.Local).AddTicks(1130),
                             LastUpdate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Hotel A"
                         });
@@ -278,54 +278,54 @@ namespace Hotel.Infra.Repository.Migrations
                     b.HasData(
                         new
                         {
-                            RoomID = new Guid("9dce4c50-bd22-466b-a027-113b78fc2efc"),
-                            CreatedDate = new DateTime(2023, 3, 7, 8, 8, 29, 577, DateTimeKind.Local).AddTicks(5101),
+                            RoomID = new Guid("31342b41-1dee-491a-8dd6-6c03af271b9b"),
+                            CreatedDate = new DateTime(2023, 3, 8, 12, 11, 4, 923, DateTimeKind.Local).AddTicks(1752),
                             DailyRate = 100m,
-                            HotelID = new Guid("42a5e8f5-5745-4231-8cd3-47a0e4c0f098"),
+                            HotelID = new Guid("60581ea7-a79e-4df4-abcb-a956f3316639"),
                             IsAvailable = false,
                             LastUpdate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            NextBookingAvailableDate = new DateTime(2023, 3, 10, 8, 8, 29, 577, DateTimeKind.Local).AddTicks(5102),
+                            NextBookingAvailableDate = new DateTime(2023, 3, 11, 12, 11, 4, 923, DateTimeKind.Local).AddTicks(1755),
                             Number = 1
                         },
                         new
                         {
-                            RoomID = new Guid("a384278b-e072-42cd-9ef9-0dc6195f3d85"),
-                            CreatedDate = new DateTime(2023, 3, 7, 8, 8, 29, 577, DateTimeKind.Local).AddTicks(5104),
+                            RoomID = new Guid("c6643f13-4937-4014-9730-5e444efac094"),
+                            CreatedDate = new DateTime(2023, 3, 8, 12, 11, 4, 923, DateTimeKind.Local).AddTicks(1760),
                             DailyRate = 100m,
-                            HotelID = new Guid("42a5e8f5-5745-4231-8cd3-47a0e4c0f098"),
+                            HotelID = new Guid("60581ea7-a79e-4df4-abcb-a956f3316639"),
                             IsAvailable = false,
                             LastUpdate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            NextBookingAvailableDate = new DateTime(2023, 3, 10, 8, 8, 29, 577, DateTimeKind.Local).AddTicks(5105),
+                            NextBookingAvailableDate = new DateTime(2023, 3, 11, 12, 11, 4, 923, DateTimeKind.Local).AddTicks(1761),
                             Number = 2
                         },
                         new
                         {
-                            RoomID = new Guid("0f66e4ab-6e5d-4596-910d-ae5a1d3ffb44"),
-                            CreatedDate = new DateTime(2023, 3, 7, 8, 8, 29, 577, DateTimeKind.Local).AddTicks(5107),
+                            RoomID = new Guid("b6172848-ad8f-4a60-8fbd-4b69a7226732"),
+                            CreatedDate = new DateTime(2023, 3, 8, 12, 11, 4, 923, DateTimeKind.Local).AddTicks(1764),
                             DailyRate = 100m,
-                            HotelID = new Guid("42a5e8f5-5745-4231-8cd3-47a0e4c0f098"),
+                            HotelID = new Guid("60581ea7-a79e-4df4-abcb-a956f3316639"),
                             IsAvailable = false,
                             LastUpdate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            NextBookingAvailableDate = new DateTime(2023, 3, 10, 8, 8, 29, 577, DateTimeKind.Local).AddTicks(5108),
+                            NextBookingAvailableDate = new DateTime(2023, 3, 11, 12, 11, 4, 923, DateTimeKind.Local).AddTicks(1765),
                             Number = 3
                         },
                         new
                         {
-                            RoomID = new Guid("a53634f9-9fa1-4589-b6c5-dd5231554137"),
-                            CreatedDate = new DateTime(2023, 3, 7, 8, 8, 29, 577, DateTimeKind.Local).AddTicks(5110),
+                            RoomID = new Guid("d5c82e94-c3af-4780-8d73-8b05ee00a683"),
+                            CreatedDate = new DateTime(2023, 3, 8, 12, 11, 4, 923, DateTimeKind.Local).AddTicks(1768),
                             DailyRate = 100m,
-                            HotelID = new Guid("42a5e8f5-5745-4231-8cd3-47a0e4c0f098"),
+                            HotelID = new Guid("60581ea7-a79e-4df4-abcb-a956f3316639"),
                             IsAvailable = false,
                             LastUpdate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            NextBookingAvailableDate = new DateTime(2023, 3, 10, 8, 8, 29, 577, DateTimeKind.Local).AddTicks(5111),
+                            NextBookingAvailableDate = new DateTime(2023, 3, 11, 12, 11, 4, 923, DateTimeKind.Local).AddTicks(1769),
                             Number = 4
                         },
                         new
                         {
-                            RoomID = new Guid("8cc47e03-8bc0-405f-80d3-a1736f69904e"),
-                            CreatedDate = new DateTime(2023, 3, 7, 8, 8, 29, 577, DateTimeKind.Local).AddTicks(5113),
+                            RoomID = new Guid("780c62af-43c2-4a67-820c-1d6c38409249"),
+                            CreatedDate = new DateTime(2023, 3, 8, 12, 11, 4, 923, DateTimeKind.Local).AddTicks(1776),
                             DailyRate = 100m,
-                            HotelID = new Guid("42a5e8f5-5745-4231-8cd3-47a0e4c0f098"),
+                            HotelID = new Guid("60581ea7-a79e-4df4-abcb-a956f3316639"),
                             IsAvailable = true,
                             LastUpdate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             NextBookingAvailableDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
