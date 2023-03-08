@@ -49,6 +49,12 @@ This API will receive requests from the `APIs Proxy project` just to apply the P
 
 ![image](https://user-images.githubusercontent.com/92884809/223760617-ae680a5d-5887-4115-a259-4058d511617d.png)
 
+:warning: IMPORTANT
+
+During the database creation, there are some data that will be pushed during the seed process.
+
+![image](https://user-images.githubusercontent.com/92884809/223778552-662ea6e3-b7bc-4ee1-bf78-e2447f1c0ba7.png)
+
 4. Set the `Hotel.API` as the startup project:
 
 ![image](https://user-images.githubusercontent.com/92884809/223759759-0e99c761-449b-409a-89ea-5be732d96f5d.png)
