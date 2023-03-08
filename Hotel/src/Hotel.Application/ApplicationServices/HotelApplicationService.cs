@@ -29,7 +29,6 @@ namespace Hotel.Application.ApplicationServices
         {
             var hotel = await _hotelDomainService.GetByIDAsync(model.HotelID);
 
-            hotel.HotelID = model.HotelID;
             hotel.Name = model.Name;
             hotel.LastUpdate = model.LastUpdate;
 

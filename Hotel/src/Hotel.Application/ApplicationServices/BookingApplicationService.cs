@@ -88,7 +88,6 @@ namespace Hotel.Application.ApplicationServices
         {
             var booking = await _bookingDomainService.GetByIDAsync(model.BookingID);
 
-            booking.BookingID = model.BookingID;
             booking.RoomID = model.RoomID;
             booking.CustomerID = model.CustomerID;
             booking.CheckinDate = model.CheckinDate;

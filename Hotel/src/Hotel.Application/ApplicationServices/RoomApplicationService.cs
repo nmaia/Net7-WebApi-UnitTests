@@ -87,7 +87,6 @@ namespace Hotel.Application.ApplicationServices
         {
             var room = await _roomDomainService.GetByIDAsync(model.RoomID);
 
-            room.RoomID = model.RoomID;
             room.Number = Convert.ToInt32(model.Number);
             room.IsAvailable = model.IsAvailable;
             room.HotelID = model.HotelID;

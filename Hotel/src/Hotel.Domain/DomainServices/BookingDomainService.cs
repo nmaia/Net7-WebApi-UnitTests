@@ -24,7 +24,7 @@ namespace Hotel.Domain.DomainServices
             var numberOfNights = (int)booking.CheckoutDate.Subtract(booking.CheckinDate).TotalDays;
             var room = await _roomRepository.GetByIDAsync(booking.RoomID);
 
-            if(this.IsBookingValid(booking, room, numberOfNights))
+            if(this.IsBookingValidForCreation(booking, room, numberOfNights))
             {
                 booking.TotalCost = numberOfNights * room.DailyRate;
                 await _bookingRepository.InsertAsync(booking);
@@ -43,10 +43,12 @@ namespace Hotel.Domain.DomainServices
 
         public override async Task<bool> UpdateAsync(Booking booking)
         {
+            booking.TotalCost = 0; // the value will be updated based on the new period of stay
+
             var numberOfNights = (int)booking.CheckoutDate.Subtract(booking.CheckinDate).TotalDays;
             var room = await _roomRepository.GetByIDAsync(booking.RoomID);
 
-            if(this.IsBookingValid(booking, room, numberOfNights))
+            if(this.IsBookingValidForUpdate(booking, room, numberOfNights))
             {
                 booking.TotalCost = numberOfNights * room.DailyRate;
                 await _bookingRepository.UpdateAsync(booking);
@@ -63,7 +65,20 @@ namespace Hotel.Domain.DomainServices
             }
         }
 
-        private bool IsBookingValid(Booking booking, Room room, int numberOfNights)
+        private bool IsBookingValidForUpdate(Booking booking, Room room, int numberOfNights)
+        {
+            if (booking.CheckinDate < DateTime.Now || booking.CheckoutDate < DateTime.Now) return false;
+
+            if (room == null) return false;
+
+            if (numberOfNights > 3) return false;
+
+            if ((booking.CheckinDate - DateTime.Today).Days > 30) return false;
+
+            return true;
+        }
+
+        private bool IsBookingValidForCreation(Booking booking, Room room, int numberOfNights)
         {
             if (booking.CheckinDate < DateTime.Now || booking.CheckoutDate < DateTime.Now) return false;
 

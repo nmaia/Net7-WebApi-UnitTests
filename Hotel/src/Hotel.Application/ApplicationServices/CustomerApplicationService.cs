@@ -52,7 +52,6 @@ namespace Hotel.Application.ApplicationServices
         {
             var customer = await _customerDomainService.GetByIDAsync(model.CustomerID);
             
-            customer.CustomerID = model.CustomerID;
             customer.Name = model.Name;
             customer.BirthDate = model.BirthDate;
             customer.SIN = Convert.ToInt32(model.SIN);

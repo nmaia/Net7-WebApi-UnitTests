@@ -1,5 +1,6 @@
 using Hotel.Application.Contracts;
 using Hotel.Application.ViewModels.Writing;
+using Hotel.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Hotel.API.Controllers
@@ -103,11 +104,17 @@ namespace Hotel.API.Controllers
             try
             {
                 if (ModelState.IsValid)
-                    await _bookingApplicationService.UpdateBookingAsync(model);
-                else
-                    return BadRequest(ModelState);
+                {
+                    var wasBookingUpdated = await _bookingApplicationService.UpdateBookingAsync(model);
 
-                return Ok(model);
+                    if (!wasBookingUpdated) return BadRequest($"The booking {model.BookingID} couldn't be updated. Check the the booking data.");                    
+
+                    return Ok(model);
+                }
+                else
+                {
+                    return BadRequest(ModelState);
+                }
             }
             catch (Exception ex)
             {
