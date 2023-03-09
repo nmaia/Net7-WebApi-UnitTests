@@ -19,7 +19,7 @@ namespace Hotel.Domain.DomainServices
         //todo: improve this method to return an object instead of bool.
         //todo: replace bool returns by validation messages (add them to a list of messages)
         //todo: we could use fluent validation here in order to avoid lots of IFs
-        public override async Task<bool> RegisterAsync(Booking booking)
+        public override async Task<Booking> CreateAsync(Booking booking)
         {
             var numberOfNights = (int)booking.CheckoutDate.Subtract(booking.CheckinDate).TotalDays;
             var room = await _roomRepository.GetByIDAsync(booking.RoomID);
@@ -27,17 +27,17 @@ namespace Hotel.Domain.DomainServices
             if(this.IsBookingValidForCreation(booking, room, numberOfNights))
             {
                 booking.TotalCost = numberOfNights * room.DailyRate;
-                await _bookingRepository.InsertAsync(booking);
+                var result = await _bookingRepository.CreateAsync(booking);
 
                 room.IsAvailable = false;
                 room.NextBookingAvailableDate = booking.CheckinDate.AddDays(numberOfNights);
                 await _roomRepository.UpdateAsync(room);
 
-                return true;
+                return result;
             }
             else
             {
-                return false;
+                return null;
             }
         }
 

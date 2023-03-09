@@ -1,6 +1,4 @@
-﻿using Hotel.API.Helpers.Contracts;
-using Hotel.API.Helpers;
-using Hotel.Application.ApplicationServices;
+﻿using Hotel.Application.ApplicationServices;
 using Hotel.Application.Contracts;
 using Hotel.Domain.Contracts.DomainServices;
 using Hotel.Domain.Contracts.Repositories;
@@ -14,8 +12,6 @@ namespace Hotel.API.Configuration
     {
         public static WebApplicationBuilder AddDependencyInjectionResolver(this WebApplicationBuilder builder)
         {
-            builder.Services.AddScoped<IStringHelper, StringHelper>();
-
             builder.Services.AddScoped<IHotelApplicationService, HotelApplicationService>();
             builder.Services.AddScoped<IHotelDomainService, HotelDomainService>();
             builder.Services.AddScoped<IHotelRepository, HotelRepository>();

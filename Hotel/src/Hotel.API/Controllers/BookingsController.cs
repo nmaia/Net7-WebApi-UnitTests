@@ -31,7 +31,7 @@ namespace Hotel.API.Controllers
         [ProducesResponseType(400)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-        public async Task<IActionResult> PostPlaceBookingAsync(BookingRegistrationViewModel model)
+        public async Task<IActionResult> PostBookingAsync(BookingRegistrationViewModel model)
         {
             try
             {
@@ -41,16 +41,11 @@ namespace Hotel.API.Controllers
 
                 if (!room.IsAvailable) return BadRequest($"The room {room.Number} is unavailable, chose another one.");
                 
-                var wasRoomBooked = await _bookingApplicationService.CreateBookingAsync(model);
+                var booking = await _bookingApplicationService.CreateBookingAsync(model);
 
-                if (!wasRoomBooked) return BadRequest($"The room {room.Number} couldn't be booked. Check the room availability or the booking data.");
+                if (booking == null) return BadRequest($"The room {room.Number} couldn't be booked. Check the room availability or the booking data.");
 
-                var bookings = await _bookingApplicationService.GetAllBookingsAsync();
-                var lastBooking = bookings.OrderByDescending(b => b.CreatedDate).FirstOrDefault();
-
-                if (lastBooking == null) return NotFound("There is no booking found.");
-
-                return Created($"api/bookings/{lastBooking.BookingID}", lastBooking);
+                return Created($"api/bookings/{booking.BookingID}", booking);
             }
             catch (Exception ex)
             {

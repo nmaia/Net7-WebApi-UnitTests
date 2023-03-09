@@ -13,9 +13,9 @@ namespace Hotel.Domain.DomainServices
             _repository = repository;
         }
 
-        public virtual async Task<bool> RegisterAsync(TEntity obj)
+        public virtual async Task<TEntity> CreateAsync(TEntity obj)
         {
-            return await _repository.InsertAsync(obj);
+            return await _repository.CreateAsync(obj);
         }
 
         public virtual async Task<bool> UpdateAsync(TEntity obj)

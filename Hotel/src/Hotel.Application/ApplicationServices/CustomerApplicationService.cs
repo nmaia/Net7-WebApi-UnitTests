@@ -15,7 +15,7 @@ namespace Hotel.Application.ApplicationServices
             _customerDomainService = customerDomainService;
         }
 
-        public async Task<bool> CreateCustomerAsync(CustomerRegistrationViewModel model)
+        public async Task<CustomerRegistrationViewModel> CreateCustomerAsync(CustomerRegistrationViewModel model)
         {
             var customer = new Entities.Customer()
             {
@@ -25,7 +25,21 @@ namespace Hotel.Application.ApplicationServices
                 BirthDate = model.BirthDate
             };
 
-            return await _customerDomainService.RegisterAsync(customer);
+            var entity = await _customerDomainService.CreateAsync(customer);
+
+            // todo: use automapper here
+            var response = new CustomerRegistrationViewModel()
+            {
+                Name = entity.Name,
+                Email = entity.Email,
+                SIN = entity.SIN,
+                BirthDate = entity.BirthDate,
+                CustomerID = entity.CustomerID,
+                CreatedDate = entity.CreatedDate,
+                LastUpdate = entity.LastUpdate
+            };
+
+            return response;
         }
 
         public async Task<CustomerResponseViewModel> GetCustomerByIDAsync(Guid customerID)

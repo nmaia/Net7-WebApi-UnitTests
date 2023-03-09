@@ -40,20 +40,20 @@ namespace Hotel.Tests.DomainServices
             };
 
             _roomRepositoryMock.Setup(r => r.GetByIDAsync(booking.RoomID)).ReturnsAsync(room);
-            _bookingRepositoryMock.Setup(b => b.InsertAsync(booking)).ReturnsAsync(true);
+            _bookingRepositoryMock.Setup(b => b.CreateAsync(booking)).ReturnsAsync(booking);
             _roomRepositoryMock.Setup(r => r.UpdateAsync(room)).ReturnsAsync(true);
 
             // Act
-            var result = await _bookingDomainService.RegisterAsync(booking);
+            var result = await _bookingDomainService.CreateAsync(booking);
 
             // Assert
-            Assert.True(result);
+            Assert.IsAssignableFrom<Booking>(result);
             Assert.Equal(100, booking.TotalCost);
             Assert.False(room.IsAvailable);
             Assert.Equal(DateTime.Today.AddDays(2), room.NextBookingAvailableDate);
 
             _roomRepositoryMock.Verify(r => r.GetByIDAsync(booking.RoomID), Times.Once);
-            _bookingRepositoryMock.Verify(b => b.InsertAsync(booking), Times.Once);
+            _bookingRepositoryMock.Verify(b => b.CreateAsync(booking), Times.Once);
             _roomRepositoryMock.Verify(r => r.UpdateAsync(room), Times.Once);
         }
 
@@ -89,6 +89,7 @@ namespace Hotel.Tests.DomainServices
             Assert.Equal(2 * room.DailyRate, booking.TotalCost);
             Assert.False(room.IsAvailable);
             Assert.Equal(booking.CheckoutDate, room.NextBookingAvailableDate);
+
             _bookingRepositoryMock.Verify(x => x.UpdateAsync(booking), Times.Once);
             _roomRepositoryMock.Verify(x => x.UpdateAsync(room), Times.Once);
         }

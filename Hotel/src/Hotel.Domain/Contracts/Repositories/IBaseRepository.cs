@@ -3,7 +3,7 @@
     public interface IBaseRepository<TEntity>
         where TEntity : class
     {
-        Task<bool> InsertAsync(TEntity obj);
+        Task<TEntity> CreateAsync(TEntity obj);
         Task<bool> UpdateAsync(TEntity obj);
         Task<bool> DeleteAsync(TEntity obj);
         Task<List<TEntity>> GetAllAsync();

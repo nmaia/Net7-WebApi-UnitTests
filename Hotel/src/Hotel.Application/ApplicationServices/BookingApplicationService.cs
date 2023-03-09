@@ -15,7 +15,7 @@ namespace Hotel.Application.ApplicationServices
             _bookingDomainService = bookingDomainService;
         }
 
-        public async Task<bool> CreateBookingAsync(BookingRegistrationViewModel model)
+        public async Task<BookingRegistrationViewModel> CreateBookingAsync(BookingRegistrationViewModel model)
         {
             var booking = new Entities.Booking()
             {
@@ -25,7 +25,22 @@ namespace Hotel.Application.ApplicationServices
                 RoomID= model.RoomID
             };
 
-            return await _bookingDomainService.RegisterAsync(booking);
+            var entity = await _bookingDomainService.CreateAsync(booking);
+
+            // todo: use automapper here
+            var response = new BookingRegistrationViewModel()
+            {
+                CheckinDate = entity.CheckinDate,
+                CheckoutDate = entity.CheckoutDate,
+                CustomerID = entity.CustomerID,
+                RoomID = entity.RoomID,
+                TotalCost = entity.TotalCost,
+                BookingID = entity.BookingID,
+                CreatedDate = entity.CreatedDate,
+                LastUpdate = entity.LastUpdate
+            };
+
+            return response;
         }
 
         public async Task<bool> DeleteBookingAsync(Guid bookingID)

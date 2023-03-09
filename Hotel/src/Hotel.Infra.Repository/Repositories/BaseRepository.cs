@@ -30,10 +30,13 @@ namespace Hotel.Infra.Repository.Repositories
             return await _dbContext.Set<TEntity>().FindAsync(id);
         }
 
-        public async Task<bool> InsertAsync(TEntity obj)
+        public async Task<TEntity> CreateAsync(TEntity obj)
         {
             _dbContext.Entry(obj).State = EntityState.Added;
-            return await _dbContext.SaveChangesAsync() > 0;
+            await _dbContext.SaveChangesAsync();
+            var result = _dbContext.Entry(obj).Entity;
+
+            return result;
         }
 
         public async Task<bool> UpdateAsync(TEntity obj)

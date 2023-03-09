@@ -15,17 +15,32 @@ namespace Hotel.Application.ApplicationServices
             _roomDomainService = roomDomainService;
         }
 
-        public async Task<bool> CreateRoomAsync(RoomRegistrationViewModel model)
+        public async Task<RoomRegistrationViewModel> CreateRoomAsync(RoomRegistrationViewModel model)
         {
             var room = new Entities.Room()
             {
                 Number = Convert.ToInt32(model.Number),
                 IsAvailable = model.IsAvailable,
                 HotelID = model.HotelID,
-                DailyRate = decimal.Parse(model.DailyRate)
+                DailyRate = model.DailyRate
             };
 
-            return await _roomDomainService.RegisterAsync(room);
+            var entity = await _roomDomainService.CreateAsync(room);
+
+            // todo: use automapper here
+            var response = new RoomRegistrationViewModel()
+            {
+                Number = entity.Number,
+                IsAvailable = entity.IsAvailable,
+                HotelID = entity.HotelID,
+                DailyRate = entity.DailyRate,
+                CreatedDate = entity.CreatedDate,
+                LastUpdate = entity.LastUpdate,
+                RoomID = entity.RoomID,
+                NextBookingAvailableDate = entity.NextBookingAvailableDate
+            };
+
+            return response;
         }
 
         public async Task<bool> DeleteRoomAsync(Guid roomID)
@@ -91,7 +106,7 @@ namespace Hotel.Application.ApplicationServices
             room.IsAvailable = model.IsAvailable;
             room.HotelID = model.HotelID;
             room.LastUpdate = model.LastUpdate;
-            room.DailyRate = decimal.Parse(model.DailyRate);
+            room.DailyRate = model.DailyRate;
 
             return await _roomDomainService.UpdateAsync(room);
         }

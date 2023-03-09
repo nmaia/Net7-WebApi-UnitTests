@@ -1,4 +1,3 @@
-using Hotel.API.Helpers.Contracts;
 using Hotel.Application.Contracts;
 using Hotel.Application.ViewModels.Writing;
 using Microsoft.AspNetCore.Mvc;
@@ -9,15 +8,13 @@ namespace Hotel.API.Controllers
     [Route("api/customers")]
     public class CustomersController : ControllerBase
     {
-        private readonly IStringHelper _stringHelper;
         private readonly ICustomerApplicationService _customerApplicationService;
         private readonly ILogger<CustomersController> _logger;
 
-        public CustomersController(ILogger<CustomersController> logger, ICustomerApplicationService customerApplicationService, IStringHelper stringHelper)
+        public CustomersController(ILogger<CustomersController> logger, ICustomerApplicationService customerApplicationService)
         {
             _logger = logger;
             _customerApplicationService = customerApplicationService;
-            _stringHelper = stringHelper;
         }
 
         /// <summary>
@@ -27,26 +24,17 @@ namespace Hotel.API.Controllers
         /// <returns></returns>
         [HttpPost("")]
         [ProducesResponseType(201)]
-        [ProducesResponseType(204)]
         [ProducesResponseType(400)]
         [ProducesResponseType(500)]
-        public async Task<IActionResult> PostCreateCustomerAsync(CustomerRegistrationViewModel model)
+        public async Task<IActionResult> PostCustomerAsync(CustomerRegistrationViewModel model)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    if (!_stringHelper.HasOnlyNumbers(model.SIN)) return BadRequest("SIN must have only digits/numbers.");
+                    var customer = await _customerApplicationService.CreateCustomerAsync(model);
 
-                    if (await _customerApplicationService.CreateCustomerAsync(model))
-                    {
-                        var customers = await _customerApplicationService.GetAllCustomersAsync();
-                        var customer = customers.OrderByDescending(h => h.CreatedDate).FirstOrDefault();
-
-                        if (customer == null) return NoContent();
-
-                        return Created($"api/customers/{customer.CustomerID}", customer);
-                    }
+                    if (customer != null) return Created($"api/customers/{customer.CustomerID}", customer);
 
                     return BadRequest();
                 }
@@ -78,8 +66,6 @@ namespace Hotel.API.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    if (!_stringHelper.HasOnlyNumbers(model.SIN)) return BadRequest("SIN must have only digits/numbers.");
-
                     if (!await _customerApplicationService.UpdateCustomerAsync(model)) return BadRequest();
 
                     return Ok(model);

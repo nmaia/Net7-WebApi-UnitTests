@@ -17,10 +17,6 @@ namespace Hotel.API.Proxy.ViewModels.Writing
 
         [Required(ErrorMessage = "It's necessary to inform which hotel Room is being booked by the customer.")]
         public Guid RoomID { get; set; }
-        
-        //[Required(ErrorMessage = "It's necessary to inform which hotel owns this booking.")]
-        //public Guid HotelID { get; set; }
-
         public DateTime LastUpdate { get; set; } = DateTime.Now;
     }
 }

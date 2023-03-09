@@ -7,13 +7,13 @@ namespace Hotel.Application.ViewModels.Writing
         public Guid RoomID { get; set; }
 
         [Required(ErrorMessage = "The Room Number is required.")]
-        public string Number { get; set; }
+        public int Number { get; set; }
 
         [Required(ErrorMessage = "It's necessary to inform the room availability.")]
         public bool IsAvailable { get; set; }
 
         [Required(ErrorMessage = "It's necessary to inform the room DailyRate.")]
-        public string DailyRate { get; set; }
+        public decimal DailyRate { get; set; }
 
         public DateTime LastUpdate { get; set; } = DateTime.Now;
 

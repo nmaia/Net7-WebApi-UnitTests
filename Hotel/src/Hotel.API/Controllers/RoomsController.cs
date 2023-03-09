@@ -1,4 +1,3 @@
-using Hotel.API.Helpers.Contracts;
 using Hotel.Application.Contracts;
 using Hotel.Application.ViewModels.Writing;
 using Microsoft.AspNetCore.Mvc;
@@ -9,17 +8,15 @@ namespace Hotel.API.Controllers
     [Route("api/rooms")]
     public class RoomsController : ControllerBase
     {
-        private readonly IStringHelper _stringHelper;
         private readonly IRoomApplicationService _roomApplicationService;
         private readonly IHotelApplicationService _hotelApplicationService;
         private readonly ILogger<RoomsController> _logger;
 
-        public RoomsController(ILogger<RoomsController> logger, IRoomApplicationService roomApplicationService, IHotelApplicationService hotelApplicationService, IStringHelper stringHelper)
+        public RoomsController(ILogger<RoomsController> logger, IRoomApplicationService roomApplicationService, IHotelApplicationService hotelApplicationService)
         {
             _logger = logger;
             _roomApplicationService = roomApplicationService;
             _hotelApplicationService = hotelApplicationService;
-            _stringHelper = stringHelper;
         }
 
         /// <summary>
@@ -29,23 +26,17 @@ namespace Hotel.API.Controllers
         /// <returns></returns>
         [HttpPost("")]
         [ProducesResponseType(201)]
-        [ProducesResponseType(204)]
         [ProducesResponseType(400)]
         [ProducesResponseType(500)]
-        public async Task<IActionResult> PostCreateRoomAsync(RoomRegistrationViewModel model)
+        public async Task<IActionResult> PostRoomAsync(RoomRegistrationViewModel model)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    if (!_stringHelper.HasOnlyNumbers(model.Number)) return BadRequest("The room Number must have only digits/numbers.");
+                    var room = await _roomApplicationService.CreateRoomAsync(model);
 
-                    if (!await _roomApplicationService.CreateRoomAsync(model)) return BadRequest();
-
-                    var rooms = await _roomApplicationService.GetAllRoomsAsync();
-                    var room = rooms.OrderByDescending(h => h.CreatedDate).FirstOrDefault();
-
-                    if (room == null) return NoContent();
+                    if (room == null) return BadRequest();
 
                     return Created($"api/rooms/{room.RoomID}", room);
                 }
@@ -77,8 +68,6 @@ namespace Hotel.API.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    if (!_stringHelper.HasOnlyNumbers(model.Number)) return BadRequest("The room Number must have only digits/numbers.");
-
                     if (!await _roomApplicationService.UpdateRoomAsync(model)) return BadRequest();
 
                     return Ok();

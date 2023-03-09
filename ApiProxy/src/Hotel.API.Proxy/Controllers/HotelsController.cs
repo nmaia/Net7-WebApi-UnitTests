@@ -20,7 +20,7 @@ namespace Hotel.API.Proxy.Controllers
         }
 
         [HttpPost("")]
-        public async Task<IActionResult> PostCreateHotelAsync(HotelRegistrationViewModel model)
+        public async Task<IActionResult> PostHotelAsync(HotelRegistrationViewModel model)
         {
             try
             {

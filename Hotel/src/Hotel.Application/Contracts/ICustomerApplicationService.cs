@@ -5,7 +5,7 @@ namespace Hotel.Application.Contracts
 {
     public interface ICustomerApplicationService
     {
-        Task<bool> CreateCustomerAsync(CustomerRegistrationViewModel model);
+        Task<CustomerRegistrationViewModel> CreateCustomerAsync(CustomerRegistrationViewModel model);
         Task<bool> UpdateCustomerAsync(CustomerUpdateViewModel model);
         Task<bool> DeleteCustomerAsync(Guid customerID);
         Task<List<CustomerResponseViewModel>> GetAllCustomersAsync();

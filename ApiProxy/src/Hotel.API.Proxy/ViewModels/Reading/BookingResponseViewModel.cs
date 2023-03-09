@@ -8,7 +8,6 @@
         public decimal TotalCost { get; set; }
         public Guid CustomerID { get; set; }
         public Guid RoomID { get; set; }
-        //public Guid HotelID { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime LastUpdate { get; set; }
     }

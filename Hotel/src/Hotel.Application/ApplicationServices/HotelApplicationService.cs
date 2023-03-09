@@ -15,14 +15,25 @@ namespace Hotel.Application.ApplicationServices
             _hotelDomainService = hotelDomainService;
         }
 
-        public async Task<bool> CreateHotelAsync(HotelRegistrationViewModel model)
+        public async Task<HotelRegistrationViewModel> CreateHotelAsync(HotelRegistrationViewModel model)
         {
             var hotel = new Entities.Hotel()
             {
                 Name= model.Name
             };
 
-            return await _hotelDomainService.RegisterAsync(hotel);
+            var entity = await _hotelDomainService.CreateAsync(hotel);
+
+            // todo: use automapper here
+            var response = new HotelRegistrationViewModel()
+            {
+                HotelID = entity.HotelID,
+                Name = entity.Name,
+                CreatedDate = entity.CreatedDate,
+                LastUpdate = entity.LastUpdate
+            };
+
+            return response;
         }
 
         public async Task<bool> UpdateHotelAsync(HotelUpdateViewModel model)

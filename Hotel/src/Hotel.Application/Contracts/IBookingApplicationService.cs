@@ -5,7 +5,7 @@ namespace Hotel.Application.Contracts
 {
     public interface IBookingApplicationService
     {
-        Task<bool> CreateBookingAsync(BookingRegistrationViewModel model);
+        Task<BookingRegistrationViewModel> CreateBookingAsync(BookingRegistrationViewModel model);
         Task<bool> UpdateBookingAsync(BookingUpdateViewModel model);
         Task<bool> DeleteBookingAsync(Guid bookingID);
         Task<List<BookingResponseViewModel>> GetAllBookingsAsync();

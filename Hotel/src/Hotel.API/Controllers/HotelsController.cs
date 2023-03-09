@@ -24,21 +24,17 @@ namespace Hotel.API.Controllers
         /// <returns></returns>
         [HttpPost("")]
         [ProducesResponseType(201)]
-        [ProducesResponseType(204)]
         [ProducesResponseType(400)]
         [ProducesResponseType(500)]
-        public async Task<IActionResult> PostCreateHotelAsync(HotelRegistrationViewModel model)
+        public async Task<IActionResult> PostHotelAsync(HotelRegistrationViewModel model)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    if (!await _hotelApplicationService.CreateHotelAsync(model)) return BadRequest();
+                    var hotel = await _hotelApplicationService.CreateHotelAsync(model);
 
-                    var hotels = await _hotelApplicationService.GetAllHotelsAsync();
-                    var hotel = hotels.OrderByDescending(h => h.CreatedDate).FirstOrDefault();
-
-                    if (hotel == null) return NoContent();
+                    if (hotel == null) return BadRequest();
 
                     return Created($"api/hotels/{hotel.HotelID}", hotel);
                 }

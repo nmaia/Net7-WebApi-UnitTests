@@ -21,7 +21,7 @@ namespace Hotel.API.Proxy.ViewModels.Writing
 
         [MaxLength(9, ErrorMessage = "Enter at maximum {1} letters.")]
         [Required(ErrorMessage = "The SIN is required.")]
-        public string SIN { get; set; }
+        public int SIN { get; set; }
 
         public DateTime LastUpdate { get; set; } = DateTime.Now;
     }
