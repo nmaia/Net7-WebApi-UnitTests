@@ -14,7 +14,7 @@ So, just to give you an overview about the project stack/structure. These are th
 - Repository Pattern
 - SQL Server Express
 
-Soome cool stuff I'd like to have more time to improve or add here:
+Some cool stuff I'd like to have more time to improve or add to the project:
 
 - Add [Fluent Validation](https://docs.fluentvalidation.net/en/latest/): To improve code readbility;
 - Add [AutoMapper](https://automapper.org/): To improve code readability and data transfer between objects;
@@ -24,9 +24,12 @@ Soome cool stuff I'd like to have more time to improve or add here:
 - Add [DotNet Stryker](https://stryker-mutator.io/docs/stryker-net/introduction/) (Mutation Tests): To improve unit tests reliability;
 - Adds code refactoring to the `API Proxy` project to handle `Hotels API` response in a better way;
 - Adds code refactoring to improve the API results in terms of returning friendly messages based on business rules;
+- Adds some more useful endpoints to the `Hotel.API` project (e.g. Customer Bookings, etc);
+- Improve the Polly policies;
+- Improve method and class names;
 - Create workspaces via Postman to test the APIs. So it would be easier to share the API documentation and requests with other devs or so.
 
-Actually, I have other cool projects in my GitHub profile:
+I have other cool projects in my GitHub profile, by the way:
 - e.g. [AspNetCore2.2-WebAPI-RabbitMQ-MongoDB-Docker](https://github.com/nmaia/AspNetCore2.2-WebAPI-RabbitMQ-MongoDB-Docker)
 
 ## Steps to setup/run this project locally:
@@ -36,6 +39,8 @@ Actually, I have other cool projects in my GitHub profile:
 This API will receive requests from the `APIs Proxy project` just to apply the Polly policies.
 
 1. Change the connection string:
+- Use a valid one (based on your environment);
+- Set the `Initial Catalog` as `HotelDB`.
 
 ![image](https://user-images.githubusercontent.com/92884809/223755001-be37983e-3974-4ed1-9ad6-c0f2bbeaa758.png)
 
@@ -48,6 +53,12 @@ This API will receive requests from the `APIs Proxy project` just to apply the P
 3. Once the `update-databae` command is done. You'll be bale to check the database structure:
 
 ![image](https://user-images.githubusercontent.com/92884809/223760617-ae680a5d-5887-4115-a259-4058d511617d.png)
+
+:warning: IMPORTANT
+
+During the database creation, there are some data that will be pushed during the seed process.
+
+![image](https://user-images.githubusercontent.com/92884809/223778552-662ea6e3-b7bc-4ee1-bf78-e2447f1c0ba7.png)
 
 4. Set the `Hotel.API` as the startup project:
 
